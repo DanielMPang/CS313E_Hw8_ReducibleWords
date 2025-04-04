@@ -55,7 +55,6 @@ def hash_word(s, size):
         hash_idx = (hash_idx * 26 + letter) % size
     return hash_idx
 
-
 def step_size(s):
     """
     Calculates step size for double hashing using STEP_SIZE_CONSTANT.
@@ -65,7 +64,6 @@ def step_size(s):
     """
     step = STEP_SIZE_CONSTANT - (hash_word(s, STEP_SIZE_CONSTANT) % STEP_SIZE_CONSTANT)
     return step
-
 
 def insert_word(s, hash_table):
     """
@@ -93,7 +91,6 @@ def insert_word(s, hash_table):
             raise ValueError("Hash table is full")
     hash_table[i] = s
 
-
 def find_word(s, hash_table):
     """
     Searches for a string in the hash table.
@@ -114,7 +111,6 @@ def find_word(s, hash_table):
         if i == i_save:
             break
     return False
-
 
 def is_reducible(s, hash_table, hash_memo):
     """
@@ -137,7 +133,6 @@ def is_reducible(s, hash_table, hash_memo):
             return True
     return False
 
-
 def get_longest_words(string_list):
     """
     Finds longest words from a list.
@@ -147,14 +142,12 @@ def get_longest_words(string_list):
     """
     max_len = 0
     for word in string_list:
-        if len(word) > max_len:
-            max_len = len(word)
+        max_len = max(max_len, len(word))
     longest_words = []
     for word in string_list:
         if len(word) == max_len:
             longest_words.append(word)
     return longest_words
-
 
 def main():
     """The main function that calculates the longest reducible words"""
@@ -205,7 +198,6 @@ def main():
     # one word per line
     for word in sorted(longest_reducible_words):
         print(word)
-
 
 if __name__ == "__main__":
     main()
