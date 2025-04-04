@@ -56,7 +56,6 @@ def hash_word(s, size):
     return hash_idx
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def step_size(s):
     """
     Calculates step size for double hashing using STEP_SIZE_CONSTANT.
@@ -68,7 +67,6 @@ def step_size(s):
     return step
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def insert_word(s, hash_table):
     """
     Inserts a string into the hash table using double hashing for collision resolution.
@@ -96,7 +94,6 @@ def insert_word(s, hash_table):
     hash_table[i] = s
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def find_word(s, hash_table):
     """
     Searches for a string in the hash table.
@@ -117,10 +114,8 @@ def find_word(s, hash_table):
         if i == i_save:
             break
     return False
-    
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def is_reducible(s, hash_table, hash_memo):
     """
     Determines if a string is reducible using a recursive check.
@@ -140,10 +135,9 @@ def is_reducible(s, hash_table, hash_memo):
         if find_word(sub_word, hash_table) and is_reducible(sub_word, hash_table, hash_memo):
             insert_word(s, hash_memo)
             return True
-    return False 
+    return False
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def get_longest_words(string_list):
     """
     Finds longest words from a list.
@@ -162,7 +156,6 @@ def get_longest_words(string_list):
     return longest_words
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def main():
     """The main function that calculates the longest reducible words"""
     # create an empty word_list
